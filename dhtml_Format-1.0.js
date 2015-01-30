@@ -16,50 +16,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-function djm_Language()
+function dhtml_Format()
 {
-	var locale = arguments[0];
-	var dataToLoad = arguments[1];
-	var djmSuffix = ((typeof arguments[2] != 'string')
-					? '_language'
-					: arguments[2]);
-	var callback = arguments[3];
+	var djmSuffix = ((typeof arguments[0] != 'string')
+					? '_format'
+					: arguments[0]);
 	
 	
-	var defaultGetterSettings = {
-		"prefix": "",
-		"suffix": "",
-		"capitalize": true,
-		"ignoreSettings": false,
-		"noMatchForSubfolder": "{index} (no translation for {subFolder})"
-	}
-	
-	var djm = new DynamicJsonManager(
-		dataToLoad,
-		{"folder": "languages",
-		 "subFolder": locale,
-		 "callback": callback
-		 // "shortcutMethods": {
-			// "getLocale": {
-				// "methodName": "getParameter",
-				// "arguments": {
-					// 0: "subFolder"
-				// }
-			// },
-			// "setLocale": {
-				// "methodName": "setParameter",
-				// "arguments": {
-					// 0: "subFolder"
-				// }
-			// }
-		 // }
-		},
-		defaultGetterSettings,
-		djmSuffix
-	);
-	
-	// djm.addShortcutMethod('getLocale', 'getParameter', ['subFolder']);
-	// djm.addShortcutMethod('setLocale', 'setParameter', ['subFolder', locale]);
-	
-	return djm;
 }

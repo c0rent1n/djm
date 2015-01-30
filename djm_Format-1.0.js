@@ -16,50 +16,34 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-function djm_Language()
+function djm_Format()
 {
-	var locale = arguments[0];
+	var formatType = arguments[0];
 	var dataToLoad = arguments[1];
 	var djmSuffix = ((typeof arguments[2] != 'string')
-					? '_language'
+					? '_format'
 					: arguments[2]);
 	var callback = arguments[3];
 	
-	
 	var defaultGetterSettings = {
-		"prefix": "",
+		"prefix": "", 
 		"suffix": "",
-		"capitalize": true,
+		"capitalize": false,
 		"ignoreSettings": false,
-		"noMatchForSubfolder": "{index} (no translation for {subFolder})"
+		"noMatchForSubfolder": "{index} (no format definition for {subFolder}.)"
 	}
 	
 	var djm = new DynamicJsonManager(
 		dataToLoad,
-		{"folder": "languages",
-		 "subFolder": locale,
-		 "callback": callback
-		 // "shortcutMethods": {
-			// "getLocale": {
-				// "methodName": "getParameter",
-				// "arguments": {
-					// 0: "subFolder"
-				// }
-			// },
-			// "setLocale": {
-				// "methodName": "setParameter",
-				// "arguments": {
-					// 0: "subFolder"
-				// }
-			// }
-		 // }
-		},
+		{"folder": "formats",
+		 "subFolder": formatType,
+		 "callback": callback},
 		defaultGetterSettings,
 		djmSuffix
 	);
-	
-	// djm.addShortcutMethod('getLocale', 'getParameter', ['subFolder']);
-	// djm.addShortcutMethod('setLocale', 'setParameter', ['subFolder', locale]);
+
+	// djm.addShortcutMethod('getFormatType', 'getParameter', ['subFolder']);
+	// djm.addShortcutMethod('setFormatType', 'setParameter', ['subFolder', formatType]);
 	
 	return djm;
 }
