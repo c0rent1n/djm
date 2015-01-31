@@ -19,11 +19,13 @@ THE SOFTWARE.
 function DynamicJsonManager()
 {
 	this.dataToLoad = arguments[0];
+	this.dataLoadedNumber = 0;
 	this.contents = {};
 	this.parameters = $.extend({
+		"path": "/",
 		"folder": "folder",
 		"subFolder": "subFolder",
-		"async": false,
+		"async": true,
 		"cache": false,
 		"callback": false,
 		"data": {},
@@ -64,7 +66,7 @@ function DynamicJsonManager()
 		return this.djmSuffix;
 	}
 	
-	this.load = function(name, callback) {
+	this.load = function(name) {
 		if ($.inArray(name, this.dataToLoad) == -1) {
 			this.dataToLoad.push(name);
 		}
@@ -73,43 +75,36 @@ function DynamicJsonManager()
 		var dynamicJsonManager = this;
 		$.ajax({
 			type: 'GET',
-			url: main_httpRoot + 'json/' + relativPath,
+			url: this.getParameter('path') + relativPath,
 			dataType: 'json',
 			cache: dynamicJsonManager.getParameter('cache'),
 			async: dynamicJsonManager.getParameter('async')
 		}).done(function(response) {
 			dynamicJsonManager.contents = $.extend(dynamicJsonManager.contents, response);
-			if (typeof callback == 'function') {
-				// console.log('____');
-				// console.log(dynamicJsonManager);
-				// console.log(callback);
-				callback(dynamicJsonManager);
+			// console.log('____');
+			// console.log(dynamicJsonManager);
+			// console.log(callback);
+		
+			dynamicJsonManager.dataLoadedNumber++;
+			if (dynamicJsonManager.dataLoadedNumber == dynamicJsonManager.dataToLoad.length) {
+				if (typeof dynamicJsonManager.parameters.callback == 'function') {
+					dynamicJsonManager.parameters.callback(dynamicJsonManager);
+					dynamicJsonManager.parameters.callback = false;
+				}
+				dynamicJsonManager.dataLoadedNumber = 0;
 			}
 		}).fail(function(jqXHR, textStatus) {
 			var errorDetail = (typeof jqXHR.responseText != 'undefined' ? ' [' + jqXHR.responseText + ']' : '');
-			main_dialog('error', 'djmError', {
-				"relativePath": relativPath,
-				"errorDetail": errorDetail
-			});
+			// main_dialog('error', 'djmError', {
+				// "relativePath": relativPath,
+				// "errorDetail": errorDetail
+			// });
+			alert(errorDetail);
 		});	
 		
 		// this.contents = dynamicJsonManager.contents;
 		// console.log(this.contents);
 	}
-	
-	// for (var shortcutMethodName in this.parameters.shortcutMethods) {
-		// this[shortcutMethodName] = function(argArray) {
-			// console.log(shortcutMethodName);
-			// console.log(argArray);
-			// if (typeof argArray == 'undefined') {
-				// argArray = [];
-			// }
-			// for (var argKey in this.parameters.shortcutMethods[shortcutMethodName].arguments) {
-				// argArray[argKey] = this.parameters.shortcutMethods[shortcutMethodName].arguments[argKey];
-			// }
-			// return this[this.parameters.shortcutMethods[shortcutMethodName]["methodName"]].apply(this, argArray);
-		// };
-	// }
 	
 	this.eraseContents = function() {
 		this.contents = {};
@@ -124,15 +119,10 @@ function DynamicJsonManager()
 	}
 	
 	this.loadAllData = function() {
-		var lastDataNum = this.dataToLoad.length - 1;
+		// var lastDataNum = this.dataToLoad.length - 1;
 		for (var numData = 0; numData < this.dataToLoad.length; numData++) {
 			if (typeof this.dataToLoad[numData] == 'string') {
-				if (numData == lastDataNum) {
-					this.load(this.dataToLoad[numData], this.parameters.callback);
-					this.parameters.callback = false;
-				} else {
-					this.load(this.dataToLoad[numData]);
-				}
+				this.load(this.dataToLoad[numData]);
 			}
 		}
 	}

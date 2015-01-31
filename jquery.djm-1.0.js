@@ -28,7 +28,9 @@ THE SOFTWARE.
 				var djmDetail = $(this).data('djm' + djm.getSuffix());
 				
 				if (typeof djmDetail != 'undefined') {
-					$(this)['djm' + djm.getSuffix()](djmDetail.type, djmDetail.text, djmDetail.args, djmDetail.settings);
+					for (var type in djmDetail) {
+						$(this)['djm' + djm.getSuffix()](type, djmDetail[type].text, djmDetail[type].args, djmDetail[type].settings);
+					}
 				}
 			});
 		});
@@ -85,14 +87,17 @@ THE SOFTWARE.
 					$(this).prop('href', djmText);
 					break;
 			}
-			djmDataName = 'djm' + djm.getSuffix();
-			$(this).addClass(djmDataName).data(djmDataName, {
+			var djmDataName = 'djm' + djm.getSuffix();
+			var djmDataValue = {};
+			djmDataValue[type] = {
 				"type": type,
 				"func": "get",
 				"text": text,
 				"args": args, 
 				"settings": settings
-			});
+			};
+			var djmNewDataValue = $.extend({}, $(this).data(djmDataName), djmDataValue);
+			$(this).addClass(djmDataName).data(djmDataName, djmNewDataValue);
 			
 			//Setting "Callback function" 
 			if (typeof settings != 'undefined' && typeof settings.callback == 'function') {

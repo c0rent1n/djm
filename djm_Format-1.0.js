@@ -25,19 +25,23 @@ function djm_Format()
 					: arguments[2]);
 	var callback = arguments[3];
 	
-	var defaultGetterSettings = {
-		"prefix": "", 
-		"suffix": "",
-		"capitalize": false,
-		"ignoreSettings": false,
-		"noMatchForSubfolder": "{index} (no format definition for {subFolder}.)"
+	var parameters = $.extend({}, {
+		folder: "formats",
+		subFolder: formatType,
+		callback: callback
+	}, arguments[4]);
+	
+	var getterSettings = $.extend({}, {
+		prefix: "", 
+		suffix: "",
+		capitalize: false,
+		ignoreSettings: false,
+		noMatchForSubfolder: "{index} (no format definition for {subFolder}.)"
 	}
 	
 	var djm = new DynamicJsonManager(
 		dataToLoad,
-		{"folder": "formats",
-		 "subFolder": formatType,
-		 "callback": callback},
+		parameters,
 		defaultGetterSettings,
 		djmSuffix
 	);

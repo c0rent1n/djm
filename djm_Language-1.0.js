@@ -25,36 +25,38 @@ function djm_Language()
 					: arguments[2]);
 	var callback = arguments[3];
 	
+	var parameters = $.extend({}, {
+		folder: "languages",
+		subFolder: locale,
+		callback: callback
+		// "shortcutMethods": {
+		// "getLocale": {
+			// "methodName": "getParameter",
+			// "arguments": {
+				// 0: "subFolder"
+			// }
+		// },
+		// "setLocale": {
+			// "methodName": "setParameter",
+			// "arguments": {
+				// 0: "subFolder"
+			// }
+		// }
+		// }
+	}, arguments[4]);
 	
-	var defaultGetterSettings = {
-		"prefix": "",
-		"suffix": "",
-		"capitalize": true,
-		"ignoreSettings": false,
-		"noMatchForSubfolder": "{index} (no translation for {subFolder})"
-	}
+	var getterSettings = $.extend({}, {
+		prefix: "",
+		suffix: "",
+		capitalize: true,
+		ignoreSettings: false,
+		noMatchForSubfolder: "{index} (no translation for {subFolder})"
+	}, arguments[5]);
 	
 	var djm = new DynamicJsonManager(
 		dataToLoad,
-		{"folder": "languages",
-		 "subFolder": locale,
-		 "callback": callback
-		 // "shortcutMethods": {
-			// "getLocale": {
-				// "methodName": "getParameter",
-				// "arguments": {
-					// 0: "subFolder"
-				// }
-			// },
-			// "setLocale": {
-				// "methodName": "setParameter",
-				// "arguments": {
-					// 0: "subFolder"
-				// }
-			// }
-		 // }
-		},
-		defaultGetterSettings,
+		parameters,
+		getterSettings,
 		djmSuffix
 	);
 	
