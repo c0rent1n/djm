@@ -52,7 +52,8 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 		path: "/json/"
 	};
 
-	// With these parameters, the files userJsonFile.json and adminJsonFile.json must be located in :
+	// With these parameters, the files userJsonFile.json and adminJsonFile.json 
+	// must be located in :
 	// - "/json/categoryFolder/specificFolder1/"
 	// - "/json/categoryFolder/specificFolder2/"
 	// - "/json/categoryFolder/specificFolder3/"
