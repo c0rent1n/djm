@@ -196,10 +196,10 @@ Message displayed if the DJM key {key} is not found for the subFolder {subFolder
 #### Here is the magic! 
 
 ###### Now you can replace each jQuery method like:
-     - $('.someElement').html('someText'); 
-     - $('.someElement').val('someText'); 
-     - $('.someElement').attr('title', 'someText');
-     - etc. 
+     $('.someElement').html('someText'); 
+     $('.someElement').val('someText'); 
+     $('.someElement').attr('title', 'someText');
+     // etc. 
 
 ###### Use the methods below, and get a highly dynamic HTML page!
 
