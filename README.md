@@ -44,15 +44,10 @@ Parameters for the files userJsonFile.json and adminJsonFile.json located in :
 
 
 	new DynamicJsonManager(
-	
 		dataToLoad,
-		
 		parameters,
-		
 		getterSettings,
-		
 		djmSuffix
-		
 	);
 
 
