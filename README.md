@@ -251,7 +251,7 @@ Example:
 	
 }
 #####jQuery Sample with DJM '_l' suffix.
-$("<div />").djm_l('html', 'helloUser', {userFirstName: "Totoro"});
+$('.someElement').djm_l('html', 'helloUser', {userFirstName: "Totoro"});
 
 ##### specificSettings
 Specific DJM settings for the jQuery elements concerned.
