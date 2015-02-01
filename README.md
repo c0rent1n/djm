@@ -292,9 +292,9 @@ Get the DJM suffix of the DynamicJsonManager object.
 	alert($('html').djm_l('djm').getSuffix());
 	
 ##### load(name, callback = false)
-###### name //string
+###### name: string
 Name of the JSON file to match with, with no extension.
-###### callback //function(DynamicJsonManager)
+###### callback: function(DynamicJsonManager)
 Callback function to execute after loading
 
 ##### getParameter(name)
