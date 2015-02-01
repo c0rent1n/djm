@@ -21,9 +21,12 @@ var djmCallback = function(djmInstance) {
 };
 
 /*For the files userJsonFile.json and adminJsonFile.json located in :
-* - "/json/categoryFolder/spectificFolder1/"
-* - "/json/categoryFolder/spectificFolder2/"
-* - "/json/categoryFolder/spectificFolder3/"
+
+ - "/json/categoryFolder/spectificFolder1/"
+
+ - "/json/categoryFolder/spectificFolder2/"
+
+ - "/json/categoryFolder/spectificFolder3/"
 */
 
 var parameters = {
@@ -55,7 +58,7 @@ new DynamicJsonManager(
 
 
 ### Parameters
-##### ● path = "/"
+##### * path = "/"
 Path or URL with final slash where JSON files are stored.
 
 ##### ● folder = "folder"
