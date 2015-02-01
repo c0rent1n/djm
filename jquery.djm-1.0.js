@@ -56,15 +56,12 @@ THE SOFTWARE.
 					type = 'val';
 					$(this).val(djmText);
 					break;
-				case 'func':
-					// console.log(type);
-					// console.log(settings[0]['funcName']);
-					// console.log(settings);
-					var tempFuncArgs = settings.funcArgs.slice();
-					tempFuncArgs[$.inArray('{djmReplace}', tempFuncArgs)] = djmText;
-					// console.log(tempFuncArgs);
-					$.fn[settings.funcName].apply($(this), tempFuncArgs);
-					break;
+				// case 'func':
+					// var tempFuncArgs = settings.funcArgs.slice();
+					// tempFuncArgs[$.inArray('{djmReplace}', tempFuncArgs)] = djmText;
+					// // console.log(tempFuncArgs);
+					// $.fn[settings.funcName].apply($(this), tempFuncArgs);
+					// break;
 				case 'placeholder':
 					$(this).attr('placeholder', djmText);
 					break;
@@ -91,7 +88,7 @@ THE SOFTWARE.
 			var djmDataValue = {};
 			djmDataValue[type] = {
 				"type": type,
-				"func": "get",
+				// "func": "get",
 				"text": text,
 				"args": args, 
 				"settings": settings
@@ -137,15 +134,15 @@ THE SOFTWARE.
 				$.error('Unique parameter is not an object (' + typeof dynamicJsonManager + ')');
 			}
 		},
-		'call': function(djm, funcName, funcArgs) {
-			return djm[funcName].apply(this, funcArgs);
-		},
+		// 'call': function(djm, funcName, funcArgs) {
+			// return djm[funcName].apply(this, funcArgs);
+		// },
 		'html': function(djm, text, args, settings) {
 			return textOperations(this, text, args, settings, 'html', djm);
 		},
-		'func': function(djm, text, args, settings) {
-			return textOperations(this, text, args, settings, 'func', djm);
-		},
+		// 'func': function(djm, text, args, settings) {
+			// return textOperations(this, text, args, settings, 'func', djm);
+		// },
 		'val': function(djm, text, args, settings) {		
 			return textOperations(this, text, args, settings, 'val', djm);
 		},
@@ -161,7 +158,7 @@ THE SOFTWARE.
 		'href': function(djm, text, args, settings) {		
 			return textOperations(this, text, args, settings, 'href', djm);
 		},
-		'setDjmParameter':  function(djm, djmParameterKey, djmParameterValue, options) { // Doesn't return elements if options.dynamic == true
+		'setDjmParameter': function(djm, djmParameterKey, djmParameterValue, options) {
 			djm.setParameter(djmParameterKey, djmParameterValue);
 			if (options.dynamic == true) {
 				if (typeof options.callback == 'function') {
@@ -177,10 +174,11 @@ THE SOFTWARE.
 				if (typeof options.callback == 'function') {
 					options.callback(djm);
 				}
-				return this;
+				// return this;
 			}
+			return this;
 		},
-		'getDjmParameter':  function(djm, djmParameterKey) {
+		'getDjmParameter': function(djm, djmParameterKey) {
 			return djm.getParameter(djmParameterKey);
 		}		
 	};

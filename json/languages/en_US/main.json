@@ -1,0 +1,7 @@
+{
+	"clickMe": "click me",
+	"alert": "alert!",
+	"writeSomething": "write something...",
+	"deleteMe": "delete me!",
+	"helloUser": "hello {username}!"
+}

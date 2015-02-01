@@ -1,0 +1,7 @@
+{
+	"clickMe": "クリック",
+	"alert": "警告!",
+	"writeSomething": "何かを書いてください。",
+	"deleteMe": "削除してください。",
+	"helloUser": "や、{username}!"
+}
