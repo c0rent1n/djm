@@ -22,8 +22,7 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 		//All your page here
 	};
 
-
-	// Parameters for the files userJsonFile.json and adminJsonFile.json located in :
+	// The files userJsonFile.json and adminJsonFile.json located in :
 	// - "/json/categoryFolder/spectificFolder1/"
 	// - "/json/categoryFolder/spectificFolder2/"
 	// - "/json/categoryFolder/spectificFolder3/"
