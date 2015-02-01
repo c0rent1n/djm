@@ -13,7 +13,6 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 	var dataToLoad = ['userJsonFile', 'adminJsonFile']; //Without .json extension
 	
 	// Suffix to add to "djm" for jquery elements
-	
 	// -> $('.jqueryElement').djm_l(functionName, value)
 	
 	var djmSuffix = '_l'; 
