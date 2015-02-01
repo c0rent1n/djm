@@ -22,7 +22,14 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 		//All your page here
 	};
 
-	// The files userJsonFile.json and adminJsonFile.json located in :
+	var parameters = {
+		folder: "categoryFolder",
+		subFolder: 'specificFolder1',
+		callback: djmCallback,
+		path: "/json/"
+	};
+
+	// With these parameters, the files userJsonFile.json and adminJsonFile.json must be located in :
 	// - "/json/categoryFolder/specificFolder1/"
 	// - "/json/categoryFolder/specificFolder2/"
 	// - "/json/categoryFolder/specificFolder3/"
@@ -33,13 +40,6 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 	//	"djmKey2": "djmValue2 for specificFolder1",
 	//	"djmKey3": "djmValue3 for specificFolder1"
 	// }
-
-	var parameters = {
-		folder: "categoryFolder",
-		subFolder: 'specificFolder1',
-		callback: djmCallback,
-		path: "/json/"
-	};
 	
 	var getterSettings = {
 		capitalize: true,
