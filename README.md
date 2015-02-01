@@ -305,6 +305,7 @@ Get the DynamicJsonManager parameter's value.
 
 ##### getAll()
 Get all DJM loaded contents as a simple JSON object.
+
 	{
 		"key1": "value1",
 		"key2": "value2"
