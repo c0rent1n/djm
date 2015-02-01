@@ -195,14 +195,36 @@ Message displayed if the DJM key {key} is not found for the subFolder {subFolder
 # Integration to jQuery system
 ### djmSuffix = "_main"
 Automatic values for any parameter. For example, {key1: "myValue1", key2: "myValue2"}, will replace any DJM parameter "{key1}" by "myValue1" and any DJM parameter "{key2}" by "myValue2".
-### Methods (after Instanciation)
+
+### Methods (after DynamicJsonManager Instanciation)
 ##### html
-$('.elementsToGet').djm_main('html', djmKey, djmParameters, djmSettings);
+See arguments below.
+$('.elementsToGet').djm_main('html', djmKey, djmParameters, specificSettings);
 ##### val or value
-$('.elementsToGet').djm_main('val', djmKey, djmParameters, djmSettings);
+See arguments below.
+$('.elementsToGet').djm_main('val', djmKey, djmParameters, specificSettings);
 ##### title
-$('.elementsToGet').djm_main('title', djmKey, djmParameters, djmSettings);
+See arguments below.
+$('.elementsToGet').djm_main('title', djmKey, djmParameters, specificSettings);
 ##### placeholder
-$('.elementsToGet').djm_main('placeholder', djmKey, djmParameters, djmSettings);
+See arguments below.
+$('.elementsToGet').djm_main('placeholder', djmKey, djmParameters, specificSettings);
 ##### href
-$('.elementsToGet').djm_main('href', djmKey, djmParameters, djmSettings);
+See arguments below.
+$('.elementsToGet').djm_main('href', djmKey, djmParameters, specificSettings);
+
+###### Arguments
+##### djmKey
+DJM key to find in JSON files to get its value. Can be a string or an array of strings matching to one or more DJM keys loaded.
+##### djmParameters
+DJM parameters. 
+DJM values in JSON values can contain parameters between brackets. 
+Example: 
+#####JSON File Sample
+{
+	"helloUser": hello {userFirstName}!
+}
+#####jQuery Sample with DJM '_l' suffix.
+$('<div />').djm_l('html', 'helloUser', {userFirstName: "Totoro"});
+##### specificSettings
+Specific DJM settings for the jQuery elements concerned.
