@@ -3,7 +3,12 @@ Dynamic JSON Manager
 
 This jQuery system enables you to create multi-dynamic HTML elements
 
-# DynamicJsonManager
+# Demos
+## DynamicJsonManager for a website with multilanguage support
+JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
+
+
+# DynamicJsonManager Instanciation
 ### Parameters
 ##### ● path = "/"
 Path or URL with final slash where JSON files are stored.
@@ -46,7 +51,3 @@ Free data JSON object
 ##### ● dynamicReplaceAll = {}
 ##### ● ignoreSettings = false
 ##### ● noMatchForSubfolder
-
-# Demos
-## DynamicJsonManager for a website with multilanguage support
-JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
