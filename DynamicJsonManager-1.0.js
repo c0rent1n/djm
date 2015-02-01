@@ -66,10 +66,12 @@ function DynamicJsonManager()
 		return this.djmSuffix;
 	}
 	
-	this.load = function(name) {
+	this.load = function(name, callback) {
 		if ($.inArray(name, this.dataToLoad) == -1) {
 			this.dataToLoad.push(name);
+			// alert(name);
 		}
+		
 		// console.log(this.dataToLoad);
 		var relativPath = this.getParameter('folder') + '/' + this.getParameter('subFolder') + '/' + name + '.json';
 		var dynamicJsonManager = this;
@@ -85,13 +87,8 @@ function DynamicJsonManager()
 			// console.log(dynamicJsonManager);
 			// console.log(callback);
 		
-			dynamicJsonManager.dataLoadedNumber++;
-			if (dynamicJsonManager.dataLoadedNumber == dynamicJsonManager.dataToLoad.length) {
-				if (typeof dynamicJsonManager.parameters.callback == 'function') {
-					dynamicJsonManager.parameters.callback(dynamicJsonManager);
-					dynamicJsonManager.parameters.callback = false;
-				}
-				dynamicJsonManager.dataLoadedNumber = 0;
+			if (typeof callback == 'function') {
+				callback(dynamicJsonManager);
 			}
 		}).fail(function(jqXHR, textStatus) {
 			var errorDetail = (typeof jqXHR.responseText != 'undefined' ? ' [' + jqXHR.responseText + ']' : '');
@@ -122,7 +119,17 @@ function DynamicJsonManager()
 		// var lastDataNum = this.dataToLoad.length - 1;
 		for (var numData = 0; numData < this.dataToLoad.length; numData++) {
 			if (typeof this.dataToLoad[numData] == 'string') {
-				this.load(this.dataToLoad[numData]);
+				this.load(this.dataToLoad[numData], function(dynamicJsonManager) {
+					dynamicJsonManager.dataLoadedNumber++;
+					// alert(dynamicJsonManager.dataLoadedNumber +'=='+dynamicJsonManager.dataToLoad.length);
+					if (dynamicJsonManager.dataLoadedNumber == dynamicJsonManager.dataToLoad.length) {
+						if (typeof dynamicJsonManager.parameters.callback == 'function') {
+							dynamicJsonManager.parameters.callback(dynamicJsonManager);
+							dynamicJsonManager.parameters.callback = false;
+						}
+						dynamicJsonManager.dataLoadedNumber = 0;
+					}
+				});
 			}
 		}
 	}
