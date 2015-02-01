@@ -93,19 +93,22 @@ String defining what to do if the DJM key is not found:
 String to get if the value of the DJM key is not found and if DynamicJsonManager.getterSettings.ifNotFound == 'input'.
 ##### ● ifNotFoundFunction = function(key){}
 Function to transform the DJM key to get it as its value if its value is not found and if DynamicJsonManager.getterSettings.ifNotFound == 'function'.
+
 	ifNotFoundFunction = function(key) {
 		// Your modifications on the DJM key here
 		
 		return key;
 	}
 ##### ● dynamicReplace = {}
-String replacement for the first occurrence in the DJM value. JSON object with: 
+String replacement for the first occurrence in the DJM value. JSON object with:
+
 	dynamicReplace = {
 		"oldValue1": "newValue1",
 		"oldValue2": "newValue2"
 	}
 ##### ● dynamicReplaceAll = {}
-String replacement for each occurrence in the DJM value. JSON object with: 
+String replacement for each occurrence in the DJM value. JSON object with:
+
 	dynamicReplaceAll = {
 		"oldValue1": "newValue1",
 		"oldValue2": "newValue2"
@@ -115,7 +118,8 @@ Capitalize the first word of the DJM values.
 ##### ● capitalizeAll = false
 Capitalize each word of the DJM values.
 ##### ● endCallback = false
-This setting should be used as a specific setting in DJM calls so as to change the result of the DJM string from its normal value after transformations. 
+This setting should be used as a specific setting in DJM calls so as to change the result of the DJM string from its normal value after transformations.
+
 	endCallback = function(string) {
 		// Your modifications on the DJM string here
 		
