@@ -20,13 +20,16 @@ var djmCallback = function(djmInstance) {
 	//All your page here
 };
 
-/*For the files userJsonFile.json and adminJsonFile.json located in :
+/*
+
+For the files userJsonFile.json and adminJsonFile.json located in :
 
  - "/json/categoryFolder/spectificFolder1/"
 
  - "/json/categoryFolder/spectificFolder2/"
 
  - "/json/categoryFolder/spectificFolder3/"
+
 */
 
 var parameters = {
