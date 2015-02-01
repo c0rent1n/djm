@@ -1,5 +1,5 @@
 # DJM
-Dynamic JSON Manager
+###### Dynamic JSON Manager
 
 #####Description
 A jQuery system to deal with HTML elements dynamically through JSON variable data.
@@ -182,7 +182,7 @@ Capitalize each word of the DJM values.
 This setting should be used as a specific setting in DJM calls so as to change the result of the DJM string from its normal value after transformations.
 
 	endCallback = function(string) {
-		// Your modifications on the DJM string here
+		// Your modifications on the DJM final value string here
 		
 		return string;
 	}
@@ -190,3 +190,19 @@ This setting should be used as a specific setting in DJM calls so as to change t
 This setting should be used as a specific setting in DJM calls so as to ignore defined settings, to get the value of a DJM key without any transformation.
 ##### ● noMatchForSubfolder = "{key} (no match for {subFolder}.)"
 Message displayed if the DJM key {key} is not found for the subFolder {subFolder} (Parameters automatically replaced in this message: {key}, {folder} and {subFolder}.)
+
+
+# Integration to jQuery system
+### djmSuffix = "_main"
+Automatic values for any parameter. For example, {key1: "myValue1", key2: "myValue2"}, will replace any DJM parameter "{key1}" by "myValue1" and any DJM parameter "{key2}" by "myValue2".
+### Methods (after Instanciation)
+##### html
+$('.elementsToGet').djm_main('html', djmKey, djmParameters, djmSettings);
+##### val or value
+$('.elementsToGet').djm_main('val', djmKey, djmParameters, djmSettings);
+##### title
+$('.elementsToGet').djm_main('title', djmKey, djmParameters, djmSettings);
+##### placeholder
+$('.elementsToGet').djm_main('placeholder', djmKey, djmParameters, djmSettings);
+##### href
+$('.elementsToGet').djm_main('href', djmKey, djmParameters, djmSettings);
