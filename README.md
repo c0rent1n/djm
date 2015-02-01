@@ -9,6 +9,37 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 
 
 # DynamicJsonManager Instanciation
+### Example
+var dataToLoad = ['userJsonFile', 'adminJsonFile']; //Without .json extension
+
+var djmSuffix = '_l'; //suffix to add to "djm" for jquery elements -> $('.jqueryElement').djm_l(functionName, value)
+
+var djmCallback = function(djmLanguage) {
+	$('html').djm(djmLanguage);
+	
+	//All your page here
+};
+
+var parameters = {
+	folder: "languages",
+	subFolder: 'en_US',
+	callback: djmCallback,
+	path: "/json/"
+};
+
+var getterSettings = {
+	capitalize: true,
+	noMatchForSubfolder: "{index} (no translation for {subFolder})"
+};
+
+new DynamicJsonManager(
+	dataToLoad,
+	parameters,
+	getterSettings,
+	djmSuffix
+);
+
+
 ### Parameters
 ##### ● path = "/"
 Path or URL with final slash where JSON files are stored.
