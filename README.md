@@ -199,26 +199,38 @@ Automatic values for any parameter. For example, {key1: "myValue1", key2: "myVal
 ### Methods (after DynamicJsonManager Instanciation)
 ##### html
 See arguments below.
+
 $('.elementsToGet').djm_main('html', djmKey, djmParameters, specificSettings);
+
 ##### val or value
 See arguments below.
+
 $('.elementsToGet').djm_main('val', djmKey, djmParameters, specificSettings);
+
 ##### title
 See arguments below.
+
 $('.elementsToGet').djm_main('title', djmKey, djmParameters, specificSettings);
+
 ##### placeholder
 See arguments below.
+
 $('.elementsToGet').djm_main('placeholder', djmKey, djmParameters, specificSettings);
+
 ##### href
 See arguments below.
+
 $('.elementsToGet').djm_main('href', djmKey, djmParameters, specificSettings);
 
 ###### Arguments
 ##### djmKey
 DJM key to find in JSON files to get its value. Can be a string or an array of strings matching to one or more DJM keys loaded.
+
 ##### djmParameters
 DJM parameters. 
+
 DJM values in JSON values can contain parameters between brackets. 
+
 Example: 
 #####JSON File Sample
 {
@@ -226,5 +238,6 @@ Example:
 }
 #####jQuery Sample with DJM '_l' suffix.
 $('<div />').djm_l('html', 'helloUser', {userFirstName: "Totoro"});
+
 ##### specificSettings
 Specific DJM settings for the jQuery elements concerned.
