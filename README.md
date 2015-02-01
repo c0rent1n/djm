@@ -23,9 +23,16 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 	};
 
 	// The files userJsonFile.json and adminJsonFile.json located in :
-	// - "/json/categoryFolder/spectificFolder1/"
-	// - "/json/categoryFolder/spectificFolder2/"
-	// - "/json/categoryFolder/spectificFolder3/"
+	// - "/json/categoryFolder/specificFolder1/"
+	// - "/json/categoryFolder/specificFolder2/"
+	// - "/json/categoryFolder/specificFolder3/"
+	
+	// Format of a DJM json file
+	// {
+	//	"djmKey1": "djmValue1 for specificFolder1",
+	//	"djmKey2": "djmValue2 for specificFolder1",
+	//	"djmKey3": "djmValue3 for specificFolder1"
+	// }
 
 	var parameters = {
 		folder: "categoryFolder",
@@ -91,7 +98,7 @@ String defining what to do if the DJM key is not found:
 	- function: Get DynamicJsonManager.getterSettings.ifNotFoundFunction(key)
 ##### ● ifNotFoundInput = false
 String to get if the value of the DJM key is not found and if DynamicJsonManager.getterSettings.ifNotFound == 'input'.
-##### ● ifNotFoundFunction = function(key){}
+##### ● ifNotFoundFunction = function(key) {}
 Function to transform the DJM key to get it as its value if its value is not found and if DynamicJsonManager.getterSettings.ifNotFound == 'function'.
 
 	ifNotFoundFunction = function(key) {
