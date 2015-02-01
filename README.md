@@ -73,7 +73,9 @@ If false, the instance will be returned.
 Caching JSON contents
 
 ##### ● callback = false
+
 callback(DynamicJsonManager) {}
+
 Called when all the data is loaded and then replaced by false.
 
 ##### ● data: {}
