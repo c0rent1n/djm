@@ -34,12 +34,10 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 		path: "/json/"
 	};
 	
-	
 	var getterSettings = {
 		capitalize: true,
 		noMatchForSubfolder: "(no JSON file found for {key} in {subFolder})"
 	};
-
 
 	new DynamicJsonManager(
 		dataToLoad,
@@ -95,7 +93,6 @@ String defining what to do if the DJM key is not found:
 String to get if the value of the DJM key is not found and if DynamicJsonManager.getterSettings.ifNotFound == 'input'.
 ##### ● ifNotFoundFunction = function(key){}
 Function to transform the DJM key to get it as its value if its value is not found and if DynamicJsonManager.getterSettings.ifNotFound == 'function'.
-
 	ifNotFoundFunction = function(key) {
 		// Your modifications on the DJM key here
 		
@@ -119,7 +116,6 @@ Capitalize the first word of the DJM values.
 Capitalize each word of the DJM values.
 ##### ● endCallback = false
 This setting should be used as a specific setting in DJM calls so as to change the result of the DJM string from its normal value after transformations. 
-
 	endCallback = function(string) {
 		// Your modifications on the DJM string here
 		
