@@ -265,7 +265,7 @@ Change a DJM parameter from the DynamicJsonManager object and refresh all HTML e
 	    		//Dynamic changes here if needed
 		}
 	});
-##### getDjmParameter
+##### getDjmParameter(parameterName)
 Get a DJM parameter from the DynamicJsonManager object.
 	$('html').djm_l('getDjmParameter', 'subFolder')
 You can also use the main DynamicJsonManager instance to access method and properties. 
@@ -277,6 +277,24 @@ Get the DynamicJsonManager object
 See the next division to use DynamicJsonManager objects.
 
 ### DynamicJsonManager object Methods
-Get the DynamicJsonManager object
+##### get(djmKey, djmParameters, specificSettings)
+Get the value of a djmKey.
+	//Example:
+	alert($('html').djm_l('djm').get(djmKey));
+	
+##### getSuffix()
+Get the DJM suffix of the DynamicJsonManager object.
+	//Example:
+	alert($('html').djm_l('djm').getSuffix());
+	
+##### load(name, callback = false)
+###### name //string
+Name of the JSON file to match with, with no extension.
+###### callback //function(DynamicJsonManager)
+Callback function to execute after loading
 
-See below.
+##### getParameter(name)
+Get the DynamicJsonManager parameter's value.
+
+##### getAll()
+Get all DJM contents ("key": "value") as a simple JSON object.
