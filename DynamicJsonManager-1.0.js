@@ -22,30 +22,30 @@ function DynamicJsonManager()
 	this.dataLoadedNumber = 0;
 	this.contents = {};
 	this.parameters = $.extend({
-		"path": "/",
-		"folder": "folder",
-		"subFolder": "subFolder",
-		"async": true,
-		"cache": false,
-		"callback": false,
-		"data": {},
-		"shortcutMethods": {}
+		path: "/",
+		folder: "folder",
+		subFolder: "subFolder",
+		async: true,
+		cache: false,
+		callback: false,
+		data: {},
+		shortcutMethods: {}
 	}, arguments[1]);
 	this.getterSettings = $.extend({
-		"autoValues": {}, 
-		"prefix": "", 
-		"suffix": "",
-		"minimumLength": 2,
-		"ifNotFound": "default",
-		"ifNotFoundInput": false,
-		"ifNotFoundFunction": function(){},
-		"capitalize": false,
-		"capitalizeAll": false,
-		"endCallback": false,
-		"dynamicReplace": {},
-		"dynamicReplaceAll": {},
-		"ignoreSettings": false,
-		"noMatchForSubfolder": "{index} (no match for {subFolder}.)"
+		autoValues: {}, 
+		prefix: "", 
+		suffix: "",
+		minimumLength: 2,
+		ifNotFound: "default",
+		ifNotFoundInput: false,
+		ifNotFoundFunction: function(){},
+		dynamicReplace: {},
+		dynamicReplaceAll: {},
+		capitalize: false,
+		capitalizeAll: false,
+		ignoreSettings: false,
+		noMatchForSubfolder: "{key} (no match for {subFolder}.)",
+		endCallback: false
 	}, arguments[2]);
 	this.djmSuffix = ((typeof arguments[3] != 'string')
 					? '_main'
@@ -154,23 +154,23 @@ function DynamicJsonManager()
 		return success;
 	}
 	
-	this.mget = function(indexesArray) {
+	this.mget = function(keysArray) {
 		args = arguments[1];
 		tempSettings = arguments[2];
 		capitalizeDisabled = false;
 		text = '';
-		for (var i = 0; i < indexesArray.length; i++) {
-			if (!isNaN(parseFloat(indexesArray[i])) && isFinite(indexesArray[i])
-				|| (typeof(indexesArray[i]) == 'string' && indexesArray[i].replace(/\s/g, '') == '')  //spaces and numbers translation
+		for (var i = 0; i < keysArray.length; i++) {
+			if (!isNaN(parseFloat(keysArray[i])) && isFinite(keysArray[i])
+				|| (typeof(keysArray[i]) == 'string' && keysArray[i].replace(/\s/g, '') == '')  //spaces and numbers translation
 			) {
-				text += indexesArray[i];
-			} else if (typeof indexesArray[i] == 'object') { //jQuery element
-				var elements = indexesArray[i].get();
+				text += keysArray[i];
+			} else if (typeof keysArray[i] == 'object') { //jQuery element
+				var elements = keysArray[i].get();
 				for (var j = 0; j < elements.length; j++) {
 					text += $('<div></div>').html($(elements[j]).clone()).html();
 				}
 			} else {
-				text += this.get(indexesArray[i], args, tempSettings)
+				text += this.get(keysArray[i], args, tempSettings)
 			}
 			if (!capitalizeDisabled) {
 				tempSettings = $.extend({}, tempSettings, {"capitalize": false});
@@ -181,8 +181,8 @@ function DynamicJsonManager()
 	}
 	
 	
-	this.get = function(index) {
-		//index, $args = array(), $tempSettings = null)
+	this.get = function(key) {
+		//key, $args = array(), $tempSettings = null)
 		if (typeof arguments[1] == 'undefined') {
 			var args = {};
 		} else {
@@ -195,10 +195,10 @@ function DynamicJsonManager()
 		}
 		
 		var string;
-		if (typeof index == 'undefined' || index.length < tempSettings.minimumLength) {
-			string = index;
+		if (typeof key == 'undefined' || key.length < tempSettings.minimumLength) {
+			string = key;
 		} else {
-			if (typeof this.contents[index] == 'undefined') {
+			if (typeof this.contents[key] == 'undefined') {
 				// console.log(tempSettings);
 				if (typeof tempSettings.ifNotFound == 'string') {
 					switch (tempSettings.ifNotFound) {
@@ -206,25 +206,26 @@ function DynamicJsonManager()
 							return false;
 							break;
 						case 'key':
-							return index;
+							return key;
 							break;
 						case 'input':
 							return tempSettings.ifNotFoundInput;
 							break;
 						case 'function':
-							return tempSettings['ifNotFoundFunction'](index);
+							return tempSettings['ifNotFoundFunction'](key);
 							break;
 						default:
 							string = tempSettings.noMatchForSubfolder;
 							args = {
-								"index": index, 
-								"subFolder": this.getParameter('subFolder')
+								key: key, 
+								folder: this.getParameter('folder'), 
+								subFolder: this.getParameter('subFolder')
 							};
 							tempSettings['ignoreSettings'] = true;
 					}
 				}
 			} else {
-				string = this.contents[index];
+				string = this.contents[key];
 			}
 			
 			string = this.doGet(string, args, tempSettings);
