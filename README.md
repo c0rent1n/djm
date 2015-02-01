@@ -25,7 +25,7 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 # DynamicJsonManager Instanciation
 
 ######	new DynamicJsonManager(
-######	    dataToLoad,
+######	    dataToLoad,
 ######	    parameters,
 ######	    getterSettings,
 ######	    djmSuffix
