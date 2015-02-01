@@ -196,31 +196,32 @@ Message displayed if the DJM key {key} is not found for the subFolder {subFolder
 ### djmSuffix = "_main"
 Automatic values for any parameter. For example, {key1: "myValue1", key2: "myValue2"}, will replace any DJM parameter "{key1}" by "myValue1" and any DJM parameter "{key2}" by "myValue2".
 
-### Methods (after DynamicJsonManager Instanciation)
+### Methods 
+##### (after DynamicJsonManager Instanciation with djmSuffix == '_l')
 ##### html
 See arguments below.
 
-$('.elementsToGet').djm_main('html', djmKey, djmParameters, specificSettings);
+$('.elementsToGet').djm_l('html', djmKey, djmParameters, specificSettings);
 
 ##### val or value
 See arguments below.
 
-$('.elementsToGet').djm_main('val', djmKey, djmParameters, specificSettings);
+$('.elementsToGet').djm_l('val', djmKey, djmParameters, specificSettings);
 
 ##### title
 See arguments below.
 
-$('.elementsToGet').djm_main('title', djmKey, djmParameters, specificSettings);
+$('.elementsToGet').djm_l('title', djmKey, djmParameters, specificSettings);
 
 ##### placeholder
 See arguments below.
 
-$('.elementsToGet').djm_main('placeholder', djmKey, djmParameters, specificSettings);
+$('.elementsToGet').djm_l('placeholder', djmKey, djmParameters, specificSettings);
 
 ##### href
 See arguments below.
 
-$('.elementsToGet').djm_main('href', djmKey, djmParameters, specificSettings);
+$('.elementsToGet').djm_l('href', djmKey, djmParameters, specificSettings);
 
 ###### Arguments
 ##### djmKey
