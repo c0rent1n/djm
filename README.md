@@ -208,7 +208,7 @@ Message displayed if the DJM key {key} is not found for the subFolder {subFolder
 Automatic values for any parameter. For example, {key1: "myValue1", key2: "myValue2"}, will replace any DJM parameter "{key1}" by "myValue1" and any DJM parameter "{key2}" by "myValue2".
 
 
-### Contents Methods 
+### jquery.djm Contents Methods 
 ###### (after a DynamicJsonManager Instanciation with djmSuffix == '_l')
 ##### html
 See arguments below.
@@ -255,10 +255,10 @@ Example:
 ##### specificSettings
 Specific DJM settings for the jQuery elements concerned.
 
-### DJM Methods
-###### To call on the root DJM element
+### jquery.djm DJM Methods
+###### To call on the root DJM element (commonly $('html'))
 ##### setDjmParameter(parameterName, parameterValue, options) {}
-Change a parameter from the DynamicJsonManager object and refresh all HTML elements concerned if dynamic == true.
+Change a DJM parameter from the DynamicJsonManager object and refresh all HTML elements concerned if dynamic == true.
 	$('html').djm_l('setDjmParameter', 'subFolder', 'specificFolder3', {
 		"dynamic": true,
 		"callback": function(djm) {
@@ -266,3 +266,17 @@ Change a parameter from the DynamicJsonManager object and refresh all HTML eleme
 		}
 	});
 ##### getDjmParameter
+Get a DJM parameter from the DynamicJsonManager object.
+	$('html').djm_l('getDjmParameter', 'subFolder')
+You can also use the main DynamicJsonManager instance to access method and properties. 
+
+See below.
+##### djm
+Get the DynamicJsonManager object
+	var djmObject = $('html').djm_l('djm');
+See the next division to use DynamicJsonManager objects.
+
+### DynamicJsonManager object Methods
+Get the DynamicJsonManager object
+
+See below.
