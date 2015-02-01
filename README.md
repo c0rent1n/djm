@@ -25,29 +25,21 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 
 Parameters for the files userJsonFile.json and adminJsonFile.json located in :
 
-    - "/json/categoryFolder/spectificFolder1/"
-    - "/json/categoryFolder/spectificFolder2/"
-    - "/json/categoryFolder/spectificFolder3/"
+   - "/json/categoryFolder/spectificFolder1/"
+   - "/json/categoryFolder/spectificFolder2/"
+   - "/json/categoryFolder/spectificFolder3/"
 
 	var parameters = {
-	
 		folder: "categoryFolder",
-		
 		subFolder: 'specificFolder1',
-		
 		callback: djmCallback,
-		
 		path: "/json/"
-		
 	};
 	
 	
 	var getterSettings = {
-	
 		capitalize: true,
-		
 		noMatchForSubfolder: "(no JSON file found for {key} in {subFolder})"
-		
 	};
 
 
