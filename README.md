@@ -4,7 +4,7 @@ Dynamic JSON Manager
 This jQuery system enables you to create multi-dynamic HTML elements
 
 # Demos
-## DynamicJsonManager for a website with multilanguage support
+## DynamicJsonManager for a website with multilingual support
 JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 
 
@@ -14,15 +14,19 @@ var dataToLoad = ['userJsonFile', 'adminJsonFile']; //Without .json extension
 
 var djmSuffix = '_l'; //suffix to add to "djm" for jquery elements -> $('.jqueryElement').djm_l(functionName, value)
 
-var djmCallback = function(djmLanguage) {
-	$('html').djm(djmLanguage);
+var djmCallback = function(djmInstance) {
+	$('html').djm(djmInstance);
 	
 	//All your page here
 };
 
+//For the files userJsonFile.json and adminJsonFile.json located in :
+// - "/json/categoryFolder/spectificFolder1/"
+// - "/json/categoryFolder/spectificFolder2/"
+// - "/json/categoryFolder/spectificFolder3/"
 var parameters = {
-	folder: "languages",
-	subFolder: 'en_US',
+	folder: "categoryFolder",
+	subFolder: 'specificFolder1',
 	callback: djmCallback,
 	path: "/json/"
 };
