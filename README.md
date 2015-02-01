@@ -208,7 +208,7 @@ Automatic values for any parameter. For example, {key1: "myValue1", key2: "myVal
 
 
 ### Methods 
-##### (after a DynamicJsonManager Instanciation with djmSuffix == '_l')
+###### (after a DynamicJsonManager Instanciation with djmSuffix == '_l')
 ##### html
 See arguments below.
 
@@ -234,7 +234,7 @@ See arguments below.
 
 $('.elementsToGet').djm_l('href', djmKey, djmParameters, specificSettings);
 
-###### Arguments
+### Arguments
 ##### djmKey
 DJM key to find in JSON files to get its value. Can be a string or an array of strings matching to one or more DJM keys loaded.
 
