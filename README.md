@@ -39,6 +39,7 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 	var djmSuffix = '_l'; 
 	
 	var djmCallback = function(djmInstance) {
+		//Element where to store the root DJM instance
 		$('html').djm(djmInstance);
 		
 		//All your page here
@@ -207,7 +208,7 @@ Message displayed if the DJM key {key} is not found for the subFolder {subFolder
 Automatic values for any parameter. For example, {key1: "myValue1", key2: "myValue2"}, will replace any DJM parameter "{key1}" by "myValue1" and any DJM parameter "{key2}" by "myValue2".
 
 
-### Methods 
+### Contents Methods 
 ###### (after a DynamicJsonManager Instanciation with djmSuffix == '_l')
 ##### html
 See arguments below.
@@ -244,12 +245,24 @@ DJM parameters.
 DJM values in JSON files can contain parameters between brackets. 
 
 Example: 
-#####JSON File Sample
+##### JSON File Sample
 	{
 		"helloUser": hello {userFirstName}!
 	}
-#####jQuery Sample with DJM '_l' suffix.
+##### jQuery Sample with DJM '_l' suffix
 	$('.someElement').djm_l('html', 'helloUser', {userFirstName: "Totoro"});
 
 ##### specificSettings
 Specific DJM settings for the jQuery elements concerned.
+
+### DJM Methods
+###### To call on the root DJM element
+##### setDjmParameter(parameterName, parameterValue, options) {}
+Change a parameter from the DynamicJsonManager object and refresh all HTML elements concerned if dynamic == true.
+	$('html').djm_l('setDjmParameter', 'subFolder', 'specificFolder3', {
+		"dynamic": true,
+		"callback": function(djm) {
+	    		//Dynamic changes here if needed
+		}
+	});
+##### getDjmParameter
