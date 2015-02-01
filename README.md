@@ -29,15 +29,23 @@ var djmCallback = function(djmInstance) {
 // - "/json/categoryFolder/spectificFolder3/"
 
 var parameters = {
+
 	folder: "categoryFolder",
+	
 	subFolder: 'specificFolder1',
+	
 	callback: djmCallback,
+	
 	path: "/json/"
+	
 };
 
 var getterSettings = {
+
 	capitalize: true,
+	
 	noMatchForSubfolder: "{index} (no translation for {subFolder})"
+	
 };
 
 new DynamicJsonManager(
