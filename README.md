@@ -202,9 +202,9 @@ Message displayed if the DJM key {key} is not found for the subFolder {subFolder
 ### djmSuffix = "_main"
 Automatic values for any parameter. For example, {key1: "myValue1", key2: "myValue2"}, will replace any DJM parameter "{key1}" by "myValue1" and any DJM parameter "{key2}" by "myValue2".
 
-### Methods 
 
-##### (after DynamicJsonManager Instanciation with djmSuffix == '_l')
+### Methods 
+##### (after a DynamicJsonManager Instanciation with djmSuffix == '_l')
 ##### html
 See arguments below.
 
