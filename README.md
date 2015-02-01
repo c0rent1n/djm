@@ -1,7 +1,15 @@
 # DJM
 Dynamic JSON Manager
 
-A jQuery system to deal with HTML elements dynamically.
+######Description
+A jQuery system to deal with HTML elements dynamically through JSON variable data.
+
+######JSON
+JSON format enables you to share non-sensible data between server languages and JavaScript.
+
+######Application examples:
+Multilingual websites
+Mass, size and currency converters
 
 # Demos
 ## DynamicJsonManager for multilingual support
