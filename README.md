@@ -98,22 +98,23 @@ String to get if the value of the DJM key is not found and if DynamicJsonManager
 ##### ● ifNotFoundFunction = function(key){}
 Function to transform the DJM key to get it as its value if its value is not found and if DynamicJsonManager.getterSettings.ifNotFound == 'function'.
 
-ifNotFoundFunction = function(key) {
-
-	// Your modifications on the DJM key here
-	
-	return key;
-}
+	ifNotFoundFunction = function(key) {
+		// Your modifications on the DJM key here
+		
+		return key;
+	}
 ##### ● dynamicReplace = {}
-String replacement for the first occurrence in the DJM value. JSON object with: {
-	"oldValue1": "newValue1",
-	"oldValue2": "newValue2"
-}
+String replacement for the first occurrence in the DJM value. JSON object with: 
+	dynamicReplace = {
+		"oldValue1": "newValue1",
+		"oldValue2": "newValue2"
+	}
 ##### ● dynamicReplaceAll = {}
-String replacement for each occurrence in the DJM value. JSON object with: {
-	"oldValue1": "newValue1",
-	"oldValue2": "newValue2"
-}
+String replacement for each occurrence in the DJM value. JSON object with: 
+	dynamicReplaceAll = {
+		"oldValue1": "newValue1",
+		"oldValue2": "newValue2"
+	}
 ##### ● capitalize = false
 Capitalize the first word of the DJM values.
 ##### ● capitalizeAll = false
@@ -121,12 +122,12 @@ Capitalize each word of the DJM values.
 ##### ● endCallback = false
 This setting should be used as a specific setting in DJM calls so as to change the result of the DJM string from its normal value after transformations. 
 
-endCallback = function(string) {
-
-	// Your modifications on the DJM string here
+	endCallback = function(string) {
 	
-	return string;
-}
+		// Your modifications on the DJM string here
+		
+		return string;
+	}
 ##### ● ignoreSettings = false
 This setting should be used as a specific setting in DJM calls so as to ignore defined settings, to get the value of a DJM key without any transformation.
 ##### ● noMatchForSubfolder = "{key} (no match for {subFolder}.)"
