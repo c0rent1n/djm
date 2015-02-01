@@ -28,8 +28,7 @@ function DynamicJsonManager()
 		async: true,
 		cache: false,
 		callback: false,
-		data: {},
-		shortcutMethods: {}
+		data: {}
 	}, arguments[1]);
 	this.getterSettings = $.extend({
 		autoValues: {}, 
