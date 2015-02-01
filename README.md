@@ -28,6 +28,7 @@ Parameters for the files userJsonFile.json and adminJsonFile.json located in :
 - "/json/categoryFolder/spectificFolder2/"
 - "/json/categoryFolder/spectificFolder3/"
 
+
 	var parameters = {
 		folder: "categoryFolder",
 		subFolder: 'specificFolder1',
