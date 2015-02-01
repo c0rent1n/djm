@@ -195,9 +195,9 @@ Message displayed if the DJM key {key} is not found for the subFolder {subFolder
 # Integration to jQuery system
 #### Here is the magic! 
 
-##### Now you can replace each jQuery method like "$('.someElement').html('someText')", "$('.someElement').val('someText')", "$('.someElement').attr('title', 'someText')", etc. 
+###### Now you can replace each jQuery method like "$('.someElement').html('someText')", "$('.someElement').val('someText')", "$('.someElement').attr('title', 'someText')", etc. 
 
-##### Use the methods below, and get a highly dynamic HTML page!
+###### Use the methods below, and get a highly dynamic HTML page!
 
 ### djmSuffix = "_main"
 Automatic values for any parameter. For example, {key1: "myValue1", key2: "myValue2"}, will replace any DJM parameter "{key1}" by "myValue1" and any DJM parameter "{key2}" by "myValue2".
