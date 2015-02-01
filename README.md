@@ -5,10 +5,10 @@ This jQuery system enables you to create multi-dynamic HTML elements
 
 # DynamicJsonManager
 ### Parameters
-##### path = "/"
+##### ► path = "/"
 Path or URL with final slash where JSON files are stored.
 
-##### folder = "folder"
+##### ► folder = "folder"
 Folder concerning the instance of DynamicJsonManager
 
 ##### subFolder = "subFolder"
