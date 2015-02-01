@@ -59,13 +59,13 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 Array of strings with the name of the JSON files to match with, with no extension.
 
 ##### Data Tree Example
-### /json/ -> main JSON path
-### /json/categoryFolder/ -> JSON folder for one instance/jQuery method of DynamicJsonManager
-### /json/categoryFolder/specificFolder1/ -> JSON sub folder which could be changed dynamically on user action
-### /json/categoryFolder/specificFolder1/userJsonFile.json -> Example of JSON file 1 with DJM keys and DJM values
-### /json/categoryFolder/specificFolder1/adminJsonFile.json -> Example of JSON file 2 with DJM keys and DJM values
-### /json/categoryFolder/specificFolder2/userJsonFile.json -> Example of JSON file 1 with same DJM keys as specificFolder1 and other DJM values
-### /json/categoryFolder/specificFolder2/adminJsonFile.json -> Example of JSON file 2 with same DJM keys as specificFolder1 and other DJM values
+	/json/ -> main JSON path
+	/json/categoryFolder/ -> JSON folder for one instance/jQuery method of DynamicJsonManager
+	/json/categoryFolder/specificFolder1/ -> JSON sub folder which could be changed dynamically on user action
+	/json/categoryFolder/specificFolder1/userJsonFile.json -> Example of JSON file 1 with DJM keys and DJM values
+	/json/categoryFolder/specificFolder1/adminJsonFile.json -> Example of JSON file 2 with DJM keys and DJM values
+	/json/categoryFolder/specificFolder2/userJsonFile.json -> Example of JSON file 1 with same DJM keys as specificFolder1 and other DJM values
+	/json/categoryFolder/specificFolder2/adminJsonFile.json -> Example of JSON file 2 with same DJM keys as specificFolder1 and other DJM values
 
 
 ##### ● path = "/"
