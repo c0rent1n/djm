@@ -26,9 +26,9 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 
 ######	new DynamicJsonManager(
 ######	    dataToLoad,
-######	    parameters,
-######	    getterSettings,
-######	    djmSuffix
+######	    parameters,
+######	    getterSettings,
+######	    djmSuffix
 ######	);
 
 ### Example
