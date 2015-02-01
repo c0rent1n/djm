@@ -5,29 +5,47 @@ This jQuery system enables you to create multi-dynamic HTML elements
 
 # DynamicJsonManager
 ### Parameters
-##### ► path = "/"
+##### ● path = "/"
 Path or URL with final slash where JSON files are stored.
 
-##### ► folder = "folder"
+##### ● folder = "folder"
 Folder concerning the instance of DynamicJsonManager
 
-##### subFolder = "subFolder"
+##### ● subFolder = "subFolder"
 Subfolder for the instance of DynamicJsonManager. By changing this subFolder, you could dynamically load changes.
 
-##### async = true
+##### ● async = true
 Asynchronous mode. 
 If true, you have to use the callback and put all the code depending on the instance of DynamicJsonManager in it.
 If false, the instance will be returned.
 
-##### cache = false
+##### ● cache = false
 Caching JSON contents
 
-##### callback = false
+##### ● callback = false
 callback(DynamicJsonManager) {}
 Called when all the data is loaded and then replaced by false.
 
-##### data: {}
+##### ● data: {}
 Free data JSON object
+
+
+### Getter Settings
+##### ● autoValues = {}
+  Automatic values for any parameter. For example {}
+##### ● prefix = "" 
+##### ● suffix = ""
+##### ● minimumLength = 2
+##### ● ifNotFound = "default"
+##### ● ifNotFoundInput = false
+##### ● ifNotFoundFunction = function(){}
+##### ● capitalize = false
+##### ● capitalizeAll = false
+##### ● endCallback = false
+##### ● dynamicReplace = {}
+##### ● dynamicReplaceAll = {}
+##### ● ignoreSettings = false
+##### ● noMatchForSubfolder
 
 # Demos
 ## DynamicJsonManager for a website with multilanguage support
