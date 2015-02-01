@@ -180,7 +180,10 @@ THE SOFTWARE.
 		},
 		'getDjmParameter': function(djm, djmParameterKey) {
 			return djm.getParameter(djmParameterKey);
-		}		
+		},
+		'djm': function(djm, djmParameterKey) {
+			return djm;
+		}
 	};
 	
 	
