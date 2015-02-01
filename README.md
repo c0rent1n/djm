@@ -11,7 +11,10 @@ JSON format enables you to share non-sensible data between server languages and 
 
 #####Application examples:
 Multilingual websites
+
 Mass, size and currency converters
+
+Format validation (through RegEx, etc.)
 
 
 # Demos
