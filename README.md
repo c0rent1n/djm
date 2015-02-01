@@ -58,7 +58,7 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 	// - "/json/categoryFolder/specificFolder2/"
 	// - "/json/categoryFolder/specificFolder3/"
 	
-	// Format of a DJM json file
+	// Format of a DJM JSON file
 	// {
 	//	"djmKey1": "djmValue1 for specificFolder1",
 	//	"djmKey2": "djmValue2 for specificFolder1",
