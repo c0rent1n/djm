@@ -10,57 +10,57 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 
 # DynamicJsonManager Instanciation
 ### Example
-var dataToLoad = ['userJsonFile', 'adminJsonFile']; //Without .json extension
-
-var djmSuffix = '_l'; //suffix to add to "djm" for jquery elements -> $('.jqueryElement').djm_l(functionName, value)
-
-var djmCallback = function(djmInstance) {
-
-	$('html').djm(djmInstance);
+	var dataToLoad = ['userJsonFile', 'adminJsonFile']; //Without .json extension
 	
-	//All your page here
-};
-
-
-//Parameters for the files userJsonFile.json and adminJsonFile.json located in :
-
- //- "/json/categoryFolder/spectificFolder1/"
-
- //- "/json/categoryFolder/spectificFolder2/"
-
- //- "/json/categoryFolder/spectificFolder3/"
-
-var parameters = {
-
-	folder: "categoryFolder",
+	var djmSuffix = '_l'; //suffix to add to "djm" for jquery elements -> $('.jqueryElement').djm_l(functionName, value)
 	
-	subFolder: 'specificFolder1',
+	var djmCallback = function(djmInstance) {
 	
-	callback: djmCallback,
-	
-	path: "/json/"
-	
-};
+		$('html').djm(djmInstance);
+		
+		//All your page here
+	};
 
-var getterSettings = {
 
-	capitalize: true,
-	
-	noMatchForSubfolder: "(no JSON file found for {key} in {subFolder})"
-	
-};
+Parameters for the files userJsonFile.json and adminJsonFile.json located in :
 
-new DynamicJsonManager(
+    - "/json/categoryFolder/spectificFolder1/"
+    - "/json/categoryFolder/spectificFolder2/"
+    - "/json/categoryFolder/spectificFolder3/"
 
-	dataToLoad,
+	var parameters = {
 	
-	parameters,
+		folder: "categoryFolder",
+		
+		subFolder: 'specificFolder1',
+		
+		callback: djmCallback,
+		
+		path: "/json/"
+		
+	};
 	
-	getterSettings,
 	
-	djmSuffix
+	var getterSettings = {
 	
-);
+		capitalize: true,
+		
+		noMatchForSubfolder: "(no JSON file found for {key} in {subFolder})"
+		
+	};
+
+
+	new DynamicJsonManager(
+	
+		dataToLoad,
+		
+		parameters,
+		
+		getterSettings,
+		
+		djmSuffix
+		
+	);
 
 
 ### Parameters
