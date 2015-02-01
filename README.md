@@ -1,10 +1,10 @@
-# djm
+# DJM
 Dynamic JSON Manager
 
-This jQuery system enables you to create multi-dynamic HTML elements
+A jQuery system to deal with HTML elements dynamically.
 
 # Demos
-## DynamicJsonManager for a website with multilingual support
+## DynamicJsonManager for multilingual support
 JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 
 
