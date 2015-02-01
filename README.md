@@ -15,22 +15,20 @@ var dataToLoad = ['userJsonFile', 'adminJsonFile']; //Without .json extension
 var djmSuffix = '_l'; //suffix to add to "djm" for jquery elements -> $('.jqueryElement').djm_l(functionName, value)
 
 var djmCallback = function(djmInstance) {
+
 	$('html').djm(djmInstance);
 	
 	//All your page here
 };
 
-/*
 
-For the files userJsonFile.json and adminJsonFile.json located in :
-
- - "/json/categoryFolder/spectificFolder1/"
-
- - "/json/categoryFolder/spectificFolder2/"
-
- - "/json/categoryFolder/spectificFolder3/"
-
-*/
+	Parameters for the files userJsonFile.json and adminJsonFile.json located in :
+	
+	 - "/json/categoryFolder/spectificFolder1/"
+	
+	 - "/json/categoryFolder/spectificFolder2/"
+	
+	 - "/json/categoryFolder/spectificFolder3/"
 
 var parameters = {
 
