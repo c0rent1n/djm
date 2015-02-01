@@ -273,17 +273,21 @@ You can also use the main DynamicJsonManager instance to access method and prope
 See below.
 ##### djm
 Get the DynamicJsonManager object
+
 	var djmObject = $('html').djm_l('djm');
+	
 See the next division to use DynamicJsonManager objects.
 
 ### DynamicJsonManager object Methods
 ##### get(djmKey, djmParameters, specificSettings)
 Get the value of a djmKey.
+
 	//Example:
 	alert($('html').djm_l('djm').get(djmKey));
 	
 ##### getSuffix()
 Get the DJM suffix of the DynamicJsonManager object.
+
 	//Example:
 	alert($('html').djm_l('djm').getSuffix());
 	
