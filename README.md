@@ -229,7 +229,7 @@ DJM key to find in JSON files to get its value. Can be a string or an array of s
 ##### djmParameters
 DJM parameters. 
 
-DJM values in JSON values can contain parameters between brackets. 
+DJM values in JSON files can contain parameters between brackets. 
 
 Example: 
 #####JSON File Sample
