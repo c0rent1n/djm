@@ -58,7 +58,7 @@ new DynamicJsonManager(
 
 
 ### Parameters
-#####* path = "/"
+##### ● path = "/"
 Path or URL with final slash where JSON files are stored.
 
 ##### ● folder = "folder"
