@@ -17,7 +17,6 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 	var djmSuffix = '_l'; 
 	
 	var djmCallback = function(djmInstance) {
-	
 		$('html').djm(djmInstance);
 		
 		//All your page here
