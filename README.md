@@ -28,7 +28,6 @@ Parameters for the files userJsonFile.json and adminJsonFile.json located in :
 - "/json/categoryFolder/spectificFolder2/"
 - "/json/categoryFolder/spectificFolder3/"
 
-
 	var parameters = {
 		folder: "categoryFolder",
 		subFolder: 'specificFolder1',
@@ -123,7 +122,6 @@ Capitalize each word of the DJM values.
 This setting should be used as a specific setting in DJM calls so as to change the result of the DJM string from its normal value after transformations. 
 
 	endCallback = function(string) {
-	
 		// Your modifications on the DJM string here
 		
 		return string;
