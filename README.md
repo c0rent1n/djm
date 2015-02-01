@@ -304,4 +304,9 @@ Callback function to execute after loading
 Get the DynamicJsonManager parameter's value.
 
 ##### getAll()
-Get all DJM contents ("key": "value") as a simple JSON object.
+Get all DJM loaded contents as a simple JSON object.
+	{
+		"key1": "value1",
+		"key2": "value2"
+		...
+	} 
