@@ -246,10 +246,12 @@ DJM values in JSON files can contain parameters between brackets.
 Example: 
 #####JSON File Sample
 {
+
 	"helloUser": hello {userFirstName}!
+	
 }
 #####jQuery Sample with DJM '_l' suffix.
-$('<div />').djm_l('html', 'helloUser', {userFirstName: "Totoro"});
+$("<div />").djm_l('html', 'helloUser', {userFirstName: "Totoro"});
 
 ##### specificSettings
 Specific DJM settings for the jQuery elements concerned.
