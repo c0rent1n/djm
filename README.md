@@ -22,7 +22,7 @@ Format validation (through RegEx, etc.)
 JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 
 
-# DynamicJsonManager Instanciation
+# DynamicJsonManager Instantiation
 
 ######	new DynamicJsonManager(
 ######	        dataToLoad,
@@ -212,7 +212,7 @@ For example, {key1: "myValue1", key2: "myValue2"}, will replace any DJM paramete
 
 
 ### jquery.djm Content Methods 
-###### (after a DynamicJsonManager Instanciation with djmSuffix == '_l')
+###### (after a DynamicJsonManager Instantiation with djmSuffix == '_l')
 ##### html
 See arguments below.
 
