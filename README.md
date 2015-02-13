@@ -24,11 +24,11 @@ JSFiddle: http://jsfiddle.net/c0rent1n/wpL1kyj9/
 
 # DynamicJsonManager Instantiation
 
-######	new DynamicJsonManager(
-######	        dataToLoad,
-######	        parameters,
-######	        getterSettings,
-######	        djmSuffix
+###### new DynamicJsonManager(
+######     dataToLoad,
+######     parameters,
+######     getterSettings,
+######     djmSuffix
 ######	);
 
 ### Example
