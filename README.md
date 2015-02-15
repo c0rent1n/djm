@@ -4,6 +4,8 @@
 #####Description
 A jQuery system to deal with HTML elements dynamically through JSON variable data.
 
+This system enables you to share safe/public files between server and clients and to load them dynamically on clients when needed. See the multilingual support example below~!
+
 
 #####JSON
 JSON format enables you to share non-sensible data between server languages and JavaScript.
